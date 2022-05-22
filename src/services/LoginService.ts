@@ -12,7 +12,7 @@ export class LoginService {
     const userByEmail = await repo.findOneBy({email: firstParam});
     const userByPhone = await repo.findOneBy({phone: firstParam});
     
-    if(!userByEmail && !userByPhone) return new Error('User not exists');
+    if(!userByEmail && !userByPhone) return new Error('Usuário não encontrado!');
     return userByEmail || userByPhone;
   }
 }

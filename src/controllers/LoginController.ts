@@ -11,13 +11,13 @@ export class LoginController {
     const user = await service.execute({ firstParam });
 
     if (user instanceof Error) {
-      return response.status(404).json(user.message);
+      return response.status(404).json({message: user.message});
     }
 
     compare(password, user.password, (err, result) => {
-      if (err) return response.status(500).json({ message: 'Sorry, something went wrong' });
+      if (err) return response.status(500).json({ message: 'Desculpe, algo deu errado!' });
 
-      if (!result) return response.status(401).json({ message: 'Invalid credentials' });
+      if (!result) return response.status(401).json({ message: 'Credenciais Inválidas' });
 
       return response.status(200).json(user);
     })
