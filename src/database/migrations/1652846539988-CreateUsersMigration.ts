@@ -29,6 +29,14 @@ export class CreateUsersMigration1652846539988 implements MigrationInterface {
                     type: 'varchar',
                     isNullable: false
                 }, {
+                    name: 'accept_terms',
+                    type: 'boolean',
+                    isNullable: false
+                }, {
+                    name: 'accept_newsletter',
+                    type: 'boolean',
+                    isNullable: false
+                }, {
                     name: 'created_at',
                     type: 'timestamp',
                     default: "now()"

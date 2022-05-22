@@ -5,11 +5,13 @@ type UserRequest = {
   name: string,
   phone: string,
   email: string,
-  password: string
+  password: string,
+  accept_terms: boolean,
+  accept_newsletter: boolean,
 }
 
 export class CreateUserService {
-  async execute({name, phone, email, password}: UserRequest): Promise<User | Error> {
+  async execute({name, phone, email, password, accept_terms, accept_newsletter}: UserRequest): Promise<User | Error> {
     const repo = AppDataSource.getRepository(User);
 
     if(await repo.findOneBy({email})){
@@ -20,7 +22,9 @@ export class CreateUserService {
       name, 
       phone, 
       email, 
-      password
+      password,
+      accept_terms,
+      accept_newsletter
     });
 
     await repo.save(newUser);

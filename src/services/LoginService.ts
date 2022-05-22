@@ -3,16 +3,16 @@ import { User } from '../entities/User';
 import { compare } from 'bcrypt';
 
 type LoginRequest = {
-  email: string,
-  password: string
+  firstParam: string
 }
 export class LoginService {
-  async execute({email, password}: LoginRequest): Promise<User | Error>{
+  async execute({firstParam}: LoginRequest): Promise<User | Error>{
     const repo = AppDataSource.getRepository(User);
 
-    const user = await repo.findOneBy({email});
+    const userByEmail = await repo.findOneBy({email: firstParam});
+    const userByPhone = await repo.findOneBy({phone: firstParam});
     
-    if(!user) return new Error('User not exists');
-    return user;
+    if(!userByEmail && !userByPhone) return new Error('User not exists');
+    return userByEmail || userByPhone;
   }
 }

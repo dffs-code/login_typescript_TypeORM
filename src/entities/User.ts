@@ -19,6 +19,12 @@ export class User {
     @Column()
     password: string
     
+    @Column()
+    accept_terms: boolean
+    
+    @Column()
+    accept_newsletter: boolean
+    
     @CreateDateColumn()
     created_at: Date
     
