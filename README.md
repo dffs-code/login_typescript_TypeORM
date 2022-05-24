@@ -33,7 +33,8 @@ Nesta API, as rotas disponíveis são:
 {
 	firstParam: string,
 	password: string
-}```
+}
+```
 
 `/register`: rota no método POST que recebe o seguinte objeto como payload:
 
