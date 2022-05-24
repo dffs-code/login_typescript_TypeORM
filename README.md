@@ -48,4 +48,4 @@ Nesta API, as rotas disponíveis são:
 	accept_newsletter: boolean 
 }
 ```
-`/users/all`: rota no método POST que retorna todos os usuários e suas informações.
+`/users/all`: rota no método GET que retorna todos os usuários e suas informações.
