@@ -1,4 +1,6 @@
-# API de Login utilizando Typescript, TypeORM e banco de dados PostgreSQL
+# API de Login
+
+Este projeto é parte de um estudo para maior aprendizado de typescript e da lib TypeORM, além da utilização do banco de dados PostgreSQL
 
 Para rodar este projeto, é necessário ter um banco de dados postgres instalado em sua máquina e arquivo .env em sua raíz que tenha a seguinte estrutura: 
 
@@ -15,7 +17,7 @@ TYPEORM_ENTITIES = src/entities/*.ts
 TYPEORM_ENTITIES_DIR = src/entities
 
 ```
-Após criado este `.env`, você deve rodar o comando de instalação das libs: `
+Após criado este `.env`, você deve rodar o comando de instalação das libs:
 `npm install`
 ou
 `yarn`
