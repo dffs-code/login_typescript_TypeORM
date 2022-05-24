@@ -7,7 +7,7 @@ const routes = Router();
 
 routes
   .get('/users/all', new GetAllUsersController().handle)
-  .post('/user', new CreateUserController().handle)
+  .post('/register', new CreateUserController().handle)
   .post('/login', new LoginController().handle)
 
   export { routes }
